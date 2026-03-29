@@ -1,0 +1,1319 @@
+<html ng-app="online" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8,9,10,11" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OnLine Corporativo v=1.0.4.</title>
+    <link href="/OLC/Content/Index.css" rel="stylesheet" />
+    <link href="/OLC/Content/medidas.css" rel="stylesheet" />
+    <link href="/OLC/Content/Mensajes.css" rel="stylesheet" />
+    <link href="/OLC/content/bootstrap.css?n=1" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="/OLC/content/font-awesome/css/font-awesome.min.css" />
+    <link type="text/css" rel="stylesheet" href="/OLC/content/font-awesome/css/all.css" />
+    <link href="/OLC/content/Callouts.css?n=1" rel="stylesheet" />
+    <link href="/OLC/content/checks.css?n=1" rel="stylesheet" />
+    <script src="/OLC/Scripts/jquery.min.js" ></script>
+    <script src="/OLC/Scripts/bootstrap.min.js" ></script>
+    <script src="/OLC/Scripts/bootstrap-notify.min.js?n=1" ></script>
+    <script src="/OLC/Scripts/bootstrap-notify.js?n=1" ></script>
+    <script src="/OLC/Scripts/sidebar.js?n=1" ></script>
+    <script src="/OLC/Scripts/index.js?v=1.0.4."></script>
+    <link href="/OLC/content/sidebar.css?n=1" rel="stylesheet" />
+    <link href="/OLC/Content/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+    <link href="/OLC/cssM/datatables.css" rel="stylesheet" />
+    <link href="/OLC/cssM/material-plugins.min.css" rel="stylesheet" />
+    <style>
+
+    .table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+    padding: 4px;
+    line-height: 3!important;
+    vertical-align: top;
+    border-top: 1px solid #E3E8EA;
+    }
+
+    .swal2-popup {
+        padding: .8em 1em 0 !important;
+        font-size: 1.5rem !important;
+    }
+
+    </style>
+
+
+</head>
+
+<body topmargin="0" leftmargin="0" style="background-color:#F5F4F5;" ng-controller="MasterController">
+    <div style="background-color:#D4001B; padding:8px; ">
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="/OLC/Imagenes/logo.png" />
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <div id="sidebar-wrapper">
+            <style>
+    .sidebar-nav li {
+        display: block !important;
+    }
+    .sidebar-nav li a {
+            display: inline !important;
+    }
+    ul.nav > li.active > a {
+        background: blue;
+    }
+    .collapsible-header {
+        font-size: 14px !important;
+        font-weight: 700;
+        color: #6a6a6a;
+        height: 5rem !important;
+        line-height: 5rem !important;
+        padding: 0 2rem !important;
+    }
+    #wrapper.menuDisplayed #sidebar-wrapper {
+        width: 250px !important;
+    }
+    #wrapper.menuDisplayed #page-content-wrapper {
+        padding-left: 250px !important;
+    }
+</style>
+
+<link href="/OLC/Content/StyleSheet1.css" rel="stylesheet" />
+
+<ul class="collapsible popout" data-collapsible="accordion">
+    <li class="">
+        <div class="collapsible-header"><span class="fas fa-users" style=" padding-right:15px;   font-size: 16px;"></span>Usuario</div>
+        <div class="collapsible-body" style="">
+            <ul class="sidebar-nav  justify-content-between" ng-model="usuario">
+                <li ng-if="okUSUEON1" ng-click="cambiarclave()"><a href="">Cambiar Clave</a><a href=""> </a></li>
+                <li ng-if="okUSUEON5" ng-click="destinatario()"><a href="">Administrar Destinatarios</a><a href=""> </a></li>
+                <li ng-if="okUSUEON5" ng-click="administrardestinatarios()"><a href="">Cargar Destinatarios</a><a href=""> </a></li>
+                
+            </ul>
+        </div>
+    </li>
+    <li class="">
+        <div class="collapsible-header"><span class="fa fa-calculator" style=" padding-right:15px;   font-size: 16px;"></span>Información Comercial</div>
+        <div class="collapsible-body" style="">
+            <ul class="sidebar-nav  justify-content-between" ng-model="usuario">
+                <li ng-if="okINFOCIA1" ng-click="esquemaServicio()"><a href="">Esquema de servicios</a><a href=""> </a></li>
+            </ul>
+        </div>
+    </li>
+    <li class="">
+        <div class="collapsible-header"><span class="fas fa-chart-bar" style=" padding-right:15px;   font-size: 16px;"></span>Informes</div>
+        <div class="collapsible-body" style="">
+            <ul class="sidebar-nav  justify-content-between" ng-model="usuario">
+                <li ng-if="okINFEON1" ng-click="consultar_guia()"><a href="">Consultar Guía</a><a href=""></a></li>
+                <li ng-if="okINFEON2" ng-click="rastrear()"><a href="">Seguimiento Envio</a><a href=""> </a></li>
+                <li ng-if="okINFEON3" ng-click="produccion1()"><a href="">Generar Reporte</a><a href=""> </a></li>
+                <li ng-if="okINFEON10" ng-click="estadistica_reparto()"><a href="">Estadística Reparto</a><a href=""> </a></li>
+                <li ng-if="okINFEON12" ng-click="Mon_reparto()"><a href="">Monitor Reparto</a><a href=""> </a></li>
+                <li ng-if="okINFEON13" ng-click="Mon_recoleccion()"><a href="">Monitor Recolección</a><a href=""> </a></li>
+                <li ng-if="okINFEON30" ng-click="InfoEspecialAlkosto()"><a href="">Reporte Especial AlKosto</a><a href=""> </a></li>
+                <li ng-if="okINFEON58" ng-click="InfoEspecialTugo()"><a href="">Reporte Especial Corte Tugo</a><a href=""> </a></li>
+                <li ng-if="okINFEON55" ng-click="InfoEspecialCorteCroydon()"><a href="">Reporte Especial Corte Croydon</a><a href=""> </a></li>
+                <li ng-if="okINFEON60" ng-click="InfoEspecialRepartoRecaudo()"><a href="">Detalle traslado pago de Reparto con Recaudo</a><a href=""> </a></li>
+                <li ng-if="okINFEON8" ng-click="AdminCecosEficacia()"><a href="">Administracion CeCos Eficacia</a><a href=""> </a></li>
+            </ul>
+        </div>
+    </li>
+    <li class="">
+        <div class="collapsible-header"><span class="fa fa-keyboard" style=" padding-right:15px;   font-size: 16px;"></span>Normalizacion y Servicio</div>
+        <div class="collapsible-body" style="">
+            <ul class="sidebar-nav  justify-content-between" ng-model="usuario">
+                <li ng-if="okCALIDA3" style="background-color:Honeydew"><a style="font-size:13px; align-content:space-around; cursor:pointer;" ng-click="formularioPQR()">Crear Queja / Solicitud / PQR</a></li>
+                <li ng-if="okQYSEON2" ng-click="consultaPQR()"><a href="">Consultar Historico</a><a href=""> </a></li>
+            </ul>
+        </div>
+    </li>
+    <li class="">
+        <div class="collapsible-header"><span class="fa fa-money-bill" style=" padding-right:15px;   font-size: 16px;"></span>Facturacion y Cartera</div>
+        <div class="collapsible-body" style="">
+            <ul class="sidebar-nav  justify-content-between" ng-model="usuario">
+                <li ng-if="okFCEON1" ng-click="consultar_cartera()"><a href="">Facturación y Cartera</a><a href=""></a></li>
+            </ul>
+        </div>
+    </li>
+    <li class="">
+        <div class="collapsible-header"><span class="fa fa-truck-loading" style=" padding-right:15px;   font-size: 16px;"></span> Recolección y O. Servicio</div>
+        <div class="collapsible-body" style="">
+            <ul class="sidebar-nav  justify-content-between" ng-model="usuario">
+                <li ng-if="okRECEON3" ng-click="capturar_OS()"><a href="">Crear Orden Servicio</a><a href=""> </a></li>
+                <li ng-if="okRECEON4" ng-click="consultar_OS()"><a href="">Consultar Orden Servicio</a><a href=""> </a></li>
+                <li ng-if="okRECEON3b" ng-click="anular_OS()"><a href="">Anular OS</a><a href=""> </a></li>
+                <li ng-if="okRECEON5" ng-click="cargar_OS()"><a href="">Cargar Orden de Servicios</a><a href=""> </a></li>
+                <li ng-if="okRECEON71" ng-click="panel_novedadesOS()"><a href="">Gestionar Novedades O de Servicio</a> <a href=""> </a></li>
+            </ul>
+        </div>
+    </li>
+    <li class="">
+        <div class="collapsible-header"><span class="fa fa-question" style=" padding-right:15px;   font-size: 16px;"></span>Panel de Novedades</div>
+        <div class="collapsible-body" style="">
+            <ul class="sidebar-nav  justify-content-between" ng-model="usuario">
+                <li ng-if="okNOVEON1" ng-click="panel_novedades()"><a href="">  Gestionar Novedades en Guias (SC)</a> <a href=""> </a></li>
+                <li ng-if="okNOVEON2" ng-click="panel_novedadesOP()"><a href="">Gestionar Novedades en Guias (OP)</a> <a href=""> </a></li>
+                <li ng-if="okNOVEON3" ng-click="plano_soluciones()"><a href="">Importar Plano Soluciones en Guias</a> <a href=""> </a></li>
+                <li ng-if="okNOVEON4" style="background-color:Honeydew" ng-click="Nov45()"><a href="">Activar guia Nov 45</a> <a href=""><span class="fas fa-warning" style="font-size:12pt;"></span> </a></li>
+            </ul>
+        </div>
+    </li>
+    <li class="">
+        <div class="collapsible-header"><span class="fas fa-users" style=" padding-right:15px;   font-size: 16px;"></span>Generación de Guias</div>
+        <div class="collapsible-body" style="">
+            <ul class="sidebar-nav  justify-content-between" ng-model="usuario">
+                <li ng-if="okGGEON1" ng-click="liquidar_envio()"><a href="">Liquidar Envío</a><a href=""> </a></li>
+                <li ng-if="okGGEON2" ng-click="capturar_guia()"><a href="">Capturar Guía</a><a href=""> </a></li>
+                <li ng-if="okGGEON8" ng-click="anular_guia()"><a href="">Anular Guía</a><a href=""> </a></li>
+                <li ng-if="okGGEON31" ng-click="cargar_archivo()"><a href="">Cargar Archivo</a><a href=""> </a></li>
+                <li ng-if="okGGEON7" ng-click="reliquidacion_manual()"><a href="">Reliquidacion Manual</a><a href=""> </a></li>
+                <li ng-if="okGGEON4" ng-click="cola()"><a href="">Cola de Impresión</a><a href=""> </a></li>
+            </ul>
+        </div>
+    </li>
+    <li class="">
+        <div class="collapsible-header"><span class="fa fa-barcode" style=" padding-right:15px;   font-size: 16px;"></span>Herramientas</div>
+        <div class="collapsible-body" style="">
+            <ul class="sidebar-nav  justify-content-between" ng-model="usuario">
+                <li><a href="https://hub.envia.co/online/Induccion_archivos/Fuentes39.zip">Descargar Fuentes</a></li>
+            </ul>
+        </div>
+    </li>
+
+    
+
+    
+
+</ul>
+
+
+<script>
+    $(".collapsible li").click(function () {
+        $(this).siblings().removeClass("active"); //comment this line to make the accordion expansible
+        $(this).toggleClass("active");
+        if ($(this).hasClass("active")) {
+            $(this).siblings().find('.collapsible-body').slideUp(300);
+            $(this).find('.collapsible-body').slideDown(300);
+        } else {
+            $(this).find('.collapsible-body').slideUp(300);
+        }
+        //$(this).find('.collapsible-body').slideToggle(500); //change display property
+    });
+
+</script>
+
+       
+
+       
+
+        
+        
+        
+        
+
+        
+
+        
+        
+
+        
+        
+        
+
+        
+
+        
+        
+
+        
+        
+
+        
+        
+
+
+    
+
+
+
+
+        </div>
+
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row" style="padding-left:15px">
+                    <div class="col-sm-12 navbar" style="background-color:#fff; padding:5px; border-bottom: 1px solid #D4D4D4;-webkit-box-shadow: 0 0px 0px 0 rgba(0,0,0,0.16), 0 0px 0px 0 rgba(0,0,0,0.12)">
+                        <span class="navbar-brand"><a href="#" id="menu-toggle"><span class="fa fa-bars" style="color:#6a6a6a; font-size:20px"></span></a></span>
+                        
+                        <span class="navbar-brand" style="font-size:13px"><b style="font-size:16px"> CAPTURAR GU&#205;A {{ titulo }}</b></span> 
+                        <span class="navbar-brand navbar-right" style="font-size:13px">
+                            <b style="color:#D4001B; font-size:16px">{{ nom_cliente }} </b>
+                            <a href="../Seguridad/Cuenta" style="text-decoration:none"><b><i class="fas fa-user"></i> {{ nom_usuario }} </b><b style="color:#D4001B"> {{ nom_oficina }}</b></a>
+                            <a ng-click="logout()" style="text-decoration:none; cursor:pointer"><span class="fa fa-lock" style="font-size:12pt;"></span> Salir</a>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-12" style="padding-left:24px; padding-right:10px; padding-top:6px;">
+                        
+
+<link rel="stylesheet" href="../content/jquery-ui.css">
+<script src="/OLC/Scripts/jquery-ui.js"></script>
+<script src="/OLC/Controllers/js/CapturarGuia.js"></script>
+
+<div class="form-horizontal" ng-controller="CapturarGuia">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Cuenta:</label>
+                <div class="col-sm-4 input-icons">
+                    <i class="fas fa-id-card icon"></i>
+                    <select id="drpCuenta" name="drpCuenta" ng-model="captura.cuenta_c" class="input-field" ng-change="irCuentaSeleccionada()">
+                        <option value="" selected="selected">--Seleccione--</option>
+                        <option ng-repeat="option in captura.cuentas" value="{{option.CuentaSin}}">{{option.Cuenta}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Forma pago:</label>
+                <div class="col-sm-4 input-icons">
+                    <i class="fas fa-money-bill-alt icon"></i>
+                    <select id="drpServicio" name="drpServicio" ng-model="captura.fp" class="input-field" ng-change="mca_Recaudo()">
+                        <option value="" selected="selected">--Seleccione--</option>
+                        <option ng-repeat="option in captura.formas_pago" value="{{option.Cod_FormaPago}}">{{option.Des_FormaPago}}</option>
+                    </select>
+                </div>
+                <label for="inputEmail3" class="col-sm-2 control-label">Servicio:</label>
+                <div class="col-sm-4 input-icons">
+                    <i class="fas fa-cube icon"></i>
+                    <select name="servicio" ng-model="captura.servicio" class="input-field" ng-change="mca_Recaudo()">
+                        <option value="" selected="selected">--Seleccione--</option>
+                        <option ng-repeat="option in captura.servicios" value="{{option.Cod_Servicio}}">{{option.Nom_Servicio}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="col-lg-2"><h3 style="color:#D4001B">Remitente</h3></div>
+        <div class="col-lg-10" style="text-align:left">
+            <span ng-show="isViewLoadingI" class="viewLoading">
+                <img src="/OLC/Imagenes/ng-loader.gif" width="25" height="25" />
+            </span>
+        </div>
+    </div>
+    <input type="hidden" id="hdfError" name="hdfError" ng-model="captura.error" value="0" />
+    <input type="hidden" id="hdfNumCliente" name="txtNumCliente" ng-model="captura.num_cliente" value="0" />
+
+    <input type="hidden" id="hdfGuiaCortesia" name="hdfGuiaCortesia" ng-model="captura.cortesia" value="0" />
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Nombre:</label>
+                <div class="col-sm-4 input-icons">
+                    <i class="fas fa-user icon"></i>
+                    <input type="text" class="input-field" id="txtNomRemitente" name="txtNomRemitente" placeholder="Nombre remitente" ng-model="captura.nom_remitente">
+                </div>
+                <label for="inputEmail3" class="col-sm-2 control-label">Ciudad:</label>
+                <div class="col-sm-4 input-icons">
+                    <i class="fas fa-city icon"></i>
+                    <input type="text" id="Nom_CiudadO" name="Nom_CiudadO" class="input-field" placeholder="Ciudad origen" ng-model="captura.origen">
+                    <input type="hidden" id="Cod_CiudadOSelected" name="Cod_CiudadOSelected" ng-model="captura.origenid" />
+                    <input type="hidden" id="txtCodCiudadO" name="txtCodCiudadO" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Dirección:</label>
+                <div class="col-sm-4 input-icons">
+                    <i class="fas fa-map-marker-alt icon"></i>
+                    <input type="text" id="txtDir_Remitente" name="txtDir_Remitente" class="input-field" placeholder="Direccion remitente" ng-model="captura.dir_remitente">
+                </div>
+                <label for="inputEmail3" class="col-sm-2 control-label">Telefono:</label>
+                <div class="col-sm-4 input-icons">
+                    <i class="fas fa-phone icon"></i>
+                    <input type="text" class="input-field" placeholder="Telefono remitente" ng-model="captura.tel_remitente">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Email:</label>
+                <div class="col-sm-4 input-icons">
+                    <i class="fas fa-at icon"></i>
+                    <input type="text" class="input-field" id="txtEmailRemitente" name="txtEmailRemitente" placeholder="Email remitente" ng-model="captura.email_remitente">
+                    <input type="hidden" ng-model="captura.cons_remitente">
+                </div>
+                <label for="inputEmail3" class="col-sm-2 control-label">Identificación:</label>
+                <div class="col-sm-4 col-md-2 col-lg-2 input-icons">
+                    <i class="fas fa-id-card icon"></i>
+                    <input type="text" class="input-field" id="txtCedRemitente" name="txtCedRemitente" ng-model="captura.ced_remitente" placeholder="Identificación" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Codigo postal:</label>
+                <div class="col-sm-4 input-icons">
+                    <i class="fas fa-bullseye icon"></i>
+                    <input type="text" class="input-field" id="txtCodigoPostal" name="txtCodigoPostal" placeholder="Codigo postal" ng-model="captura.codigo_postal_remitente">
+                </div>
+                <div ng-show="habilitarCECOS">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Centro costo:</label>
+                    <div class="col-sm-4 input-icons">
+                        <i class="fas fa-user icon"></i>
+                        <input type="hidden" id="hdfCodCC" name="hdfCodCC" ng-model="captura.cod_cc" />
+                        <input type="hidden" id="hdfFiltroCC_Usr" name="hdfFiltroCC_Usr" ng-model="captura.filtroCC_Usr" />
+                        <input type="text" id="txtNomCC" name="txtNomCC" placeholder="Centro de costo" class="input-field" ng-model="captura.nom_cc">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <h3 style="color:#D4001B">Destinatario</h3>
+    <div class="panel panel-default">
+        
+        <div class="panel-body">
+            <div class="form-group">
+
+                <label for="inputEmail3" class="col-sm-2 control-label">Nombre:</label>
+                <div class="col-sm-4 input-icons">
+                    <i class="fas fa-user icon"></i>
+                    <input type="text" class="input-field" id="txtNomDestinatario" name="txtNomDestinatario" placeholder="Nombre destinatario" ng-model="captura.nom_destinatario" ng-focus="mca_RecaudoCuenta()">
+                    <input type="hidden" id="Cons_SitioR" name="Cons_SitioR" ng-model="captura.cons_sitior" />
+                </div>
+
+                <label for="inputEmail3" class="col-sm-2 control-label">Telefono:</label>
+                <div class="col-sm-4 input-icons">
+                    <i class="fas fa-phone icon"></i>
+                    <input type="text" id="txtTelDestinatario" name="txtTelDestinatario" class="input-field" placeholder="Telefono destinatario" ng-model="captura.tel_destinatario">
+                </div>                
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Dirección:</label>
+                <div class="col-sm-4 input-icons">
+                    <i class="fas fa-map-marker-alt icon"></i>
+                    <input type="text" id="txtDirDestinatario" name="txtDirDestinatario" class="input-field" placeholder="Direccion destinatario" ng-model="captura.dir_destinatario" ng-style="{'background-color': isVisibleMcaDirecc? 'rgb(212 255 166)' : 'rgb(255 253 181)'}">
+                </div>
+                <label for="inputEmail3" class="col-sm-2 control-label">Ciudad:</label>
+                <div class="col-sm-4 input-icons">
+                    <i class="fas fa-city icon"></i>
+                    <input type="text" id="Nom_CiudadD" name="Nom_CiudadD" class="input-field" placeholder="Ciudad destino..." ng-model="captura.destino" ng-blur="consultarDireccion()">
+                    <input type="hidden" id="Cod_CiudadDSelected" name="Cod_CiudadDSelected" ng-model="captura.destinoid" />
+                    <input type="hidden" id="txtCodCiudadD" name="txtCodCiudadD" />
+                    <input type="hidden" id="Cod_Dane1" name="Cod_Dane1" ng-model="captura.dane1" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Codigo postal:</label>
+                <div class="col-sm-4 input-icons">
+                    <i class="fas fa-at icon"></i>
+                    <input type="text" class="input-field" id="txtCodigoPostalDes" placeholder="Codigo postal" ng-model="captura.codigo_postal_destinatario">
+                    <input type="hidden" class="input-field" id="txtConsDestinatario" name="txtConsDestinatario" ng-model="captura.cons_destinatario">
+                </div>
+                <label for="inputEmail3" class="col-sm-2 control-label">Identificación:</label>
+                <div class="col-sm-4 input-icons">
+                    <i class="fas fa-id-card icon"></i>
+                    <input type="text" id="txtCedDestinatario" name="txtCedDestinatario" class="input-field" placeholder="Identificacion" ng-model="captura.ced_destinatario">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Email:</label>
+                <div class="col-sm-4 input-icons">
+                    <i class="fas fa-at icon"></i>
+                    <input type="text" class="input-field" id="txtEmailDestinatario" name="txtEmailDestinatario" placeholder="Email Destinatario" ng-model="captura.email_destinatario">
+                </div>
+                <label for="inputEmail3" class="col-sm-2 control-label"></label>
+                <div class="col-sm-4 col-md-2 col-lg-2 input-icons">
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label"><b>NO</b> recibe Sabado:</label>
+                <div class="col-sm-2">
+                    <div class="checkbox checkbox-styled" style="padding-top:0px; padding-left:0px">
+                        <label>
+                            <input type="checkbox" value="1" ng-model="captura.no_sabado">
+                            <span></span>
+                        </label>
+                    </div>
+                </div>
+
+                
+                <div class="col-sm-2">
+                    <div class="checkbox checkbox-styled" style="padding-top:0px; padding-left:0px">
+                        <label>
+                            <input type='button' name='action' data-dismiss="modal" ng-click='verPDVAutorizados()' value='PDV Autorizados Entrega' class='btn btn-primary' />
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    
+    <div class="form-group">
+        <div class="col-sm-12 col-md-6 col-lg-6" style="padding-left:12px; padding-right:10px">
+            <h3 style="color:#D4001B">Contenido</h3>
+            <div class="panel panel-default">
+                
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-4 control-label">Dice contener:</label>
+                        <div class="col-sm-8 input-icons">
+                            <i class="fas fa-box-open icon"></i>
+                            <input type="hidden" id="hdfCodDescription" name="hdfCodDescription" ng-model="captura.cod_description" />
+                            <input type="text" id="txtDiceContener" name="txtDiceContener" placeholder="Contenido" class="input-field" ng-model="captura.dice_contener">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-4 control-label">Notas guia:</label>
+                        <div class="col-sm-8 input-icons">
+                            <i class="fas fa-sticky-note icon"></i>
+                            <input type="text" class="input-field" placeholder="Notas en guía" ng-model="captura.notas">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-4 control-label">Texto guia:</label>
+                        <div class="col-sm-8 input-icons">
+                            <i class="fas fa-sticky-note icon"></i>
+                            <input type="text" class="input-field" placeholder="Texto en guía" ng-model="captura.textoguia">
+                        </div>
+                    </div>
+
+                    
+                    <div ng-if="captura.servicio!=4">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Documentos:</label>
+                            <div class="col-sm-8 input-icons">
+                                <i class="fas fa-sticky-note icon"></i>
+                                <input type="text" class="input-field" placeholder="Documento" ng-model="captura.docT" maxlength="120" id="docT" name="docT">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div ng-if="captura.servicio==4">
+                        
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Documentos:</label>
+                            <div class="col-sm-2">
+                                <input type="text" id="doc1" name="doc1" placeholder="Doc 1" ng-model="captura.doc1" maxlength="12">
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" id="doc2" name="doc2" placeholder="Doc 2" ng-model="captura.doc2" maxlength="12">
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" id="doc3" name="doc3" placeholder="Doc 3" ng-model="captura.doc3" maxlength="12">
+                            </div>
+                            <div class="col-sm-2">
+                                <a type="button" href="" ng-click="masDoc=true" style="color:#DA001B; font-weight:bold">+</a>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" ng-if="masDoc==true">
+                            <label for="inputEmail3" class="col-sm-4 control-label"></label>
+                            <div class="col-sm-3">
+                                <input type="text" id="doc4" name="doc4" placeholder="Doc 4" ng-model="captura.doc4">
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" id="doc5" name="doc5" placeholder="Doc 5" ng-model="captura.doc5">
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" id="doc6" name="doc6" placeholder="Doc 6" ng-model="captura.doc6">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" ng-if="masDoc==true">
+                            <label for="inputEmail3" class="col-sm-4 control-label"></label>
+                            <div class="col-sm-3">
+                                <input type="text" id="doc7" name="doc7" placeholder="Doc 7" ng-model="captura.doc7">
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" id="doc8" name="doc8" placeholder="Doc 8" ng-model="captura.doc8">
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" id="doc9" name="doc9" placeholder="Doc 9" ng-model="captura.doc9">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" ng-if="masDoc==true">
+                            <label for="inputEmail3" class="col-sm-4 control-label"></label>
+                            <div class="col-sm-3">
+                                <input type="text" id="doc10" name="doc10" placeholder="Doc 10" ng-model="captura.doc10">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-4 control-label">Valor declarado:</label>
+                            <div class="col-sm-8 input-icons">
+                                <i class="fas fa-money-bill-alt icon"></i>
+                                <input type="text" class="input-field" placeholder="$$" style="text-align:right; font-weight:bold" ng-model="captura.valor_declarado" ng-blur="consultarOkReferencias()">
+                            </div>
+                        </div>
+
+                    <div class="form-group" ng-show="isRepartoRecaudo==true">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Valor producto:</label>
+                            <div class="col-sm-8 input-icons">
+                                <i class="fas fa-money-bill-alt icon"></i>
+                                <input type="text" class="input-field" placeholder="$$" style="text-align:right; font-weight:bold" ng-model="captura.valorproducto">
+                            </div>
+                        </div>
+
+                    <div class="form-group" ng-if="(captura.servicio==1 || captura.servicio==4 || captura.servicio==10) && (captura.servicio!=12 && captura.servicio!=13)">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Documentos:</label>
+                            <div class="col-sm-4">
+                                <div class="radio radio-styled">
+                                    <label>
+                                        <input type="radio" ng-model="captura.documentos" value="1" ng-checked="captura.servicio==1">
+                                        <span>Si</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="radio radio-styled">
+                                    <label>
+                                        <input type="radio" ng-model="captura.documentos" value="0">
+                                        <span>No</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    <div class="form-group">
+                            <div class="col-sm-12">
+                                <div class="col-sm-2"></div>
+                                <div class="checkbox checkbox-styled col-sm-4" ng-if="captura.servicio==7">
+                                    <label>
+                                        <input type="checkbox" value="0" ng-model="captura.cartas">
+                                        <span>Docs/cartas(Int)</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox checkbox-styled col-sm-3" ng-if="captura.documentos==0 || captura.servicio==2 || captura.servicio==3 || captura.servicio==4 || captura.servicio==12 || captura.servicio==13">
+                                    <label>
+                                        <input type="checkbox" value="1" ng-model="captura.bolsa">
+                                        <span>Bolsa</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox checkbox-styled col-sm-3" ng-if="captura.servicio!=null && captura.servicio!=1 && captura.servicio!=7">
+                                    <label>
+                                        <input type="checkbox" value="2" ng-model="captura.cartaporte">
+                                        <span>Cartaporte</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="form-group" ng-if="captura.bolsa==true">
+                            <div class="col-sm-12">
+                                <div class="col-sm-4 control-label">Número Bolsa:</div>
+                                <div class="col-sm-8"><input type="text" ng-model="captura.numero_bolsa"></div>
+
+                            </div>
+                        </div>
+                    <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Cita para:</label>
+                            <div class="col-sm-2 input-icons">
+                                <input type="date" id="Fec_CitaPactada" name="Fec_CitaPactada" ng-model="captura.fec_citapactada">
+                            </div>
+                            <label for="inputEmail3" class="col-sm-4 control-label">Fecha Vencimiento Orden Compra:</label>
+                            <div class="col-sm-2 input-icons">
+                                <input type="date" id="Fec_VenOrdenCompra" name="Fec_VenOrdenCompra" ng-model="captura.fec_venordencompra">
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-6" style="padding-left:10px; padding-right:10px">
+            <h3 style="color:#D4001B">Información de unidades, peso y volumen</h3>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <table class="table table-bordered">
+                        <tr align="center" style="font-weight:bold">
+                            <td>Unidades</td>
+                            <td>Peso (Kg)</td>
+                            <td>Volumen (Kg)</td>
+                            <td></td>
+                        </tr>
+                        <tr align="center">
+                            <td><input type="number" ng-model="captura.unidades_doc" style="width:56px"></td>
+                            <td><input type="number" ng-model="captura.peso_doc" style="width:56px"></td>
+                            <td><input type="number" ng-model="captura.volumen_doc" style="width:56px"></td>
+                            <td>
+                                <div ng-if="((captura.servicio==2 || captura.servicio==3) || (captura.servicio==12 || captura.servicio==13 || captura.servicio==7))">
+                                    <div style="display: flex; justify-content: center; gap: 6px;">
+                                        <button ng-click="mostrarCubicacion()" class="btn btn-primary"><i class="fa fa-cube" aria-hidden="true"></i> Cubicación</button>
+                                        <button ng-if="esCuentaTieneReferencias==true" ng-click="consultaReferencias()" class="btn btn-primary"><i class="fa fa-cube" aria-hidden="true"></i> Referencias</button>
+                                    </div>
+                                </div>
+                                <button ng-if="esCuentaCecosEficacia==true" ng-click="consultaCecosEficacia()" class="btn btn-primary"><i class="fa fa-cube" aria-hidden="true"></i> Cecos Eficacia</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <span ng-show="isLiquidando" class="viewLoading">
+        <img src="/OLC/Imagenes/ng-loader.gif" /> <b>Liquidando envío</b>...
+    </span>
+
+    <span ng-show="isGenerando" class="viewLoading">
+        <img src="/OLC/Imagenes/ng-loader.gif" /> <b>Generando guía</b>...
+    </span>
+
+    <span ng-show="isGenerandoGuias" class="viewLoading">
+        <img src="/OLC/Imagenes/ng-loader.gif" /> <b>Generando guías</b>...
+    </span>
+
+    <h3 style="color:#D4001B" ng-if="captura.activa_descuento==1">Destinatarios para descuento</h3>
+    <div class="panel panel-default" ng-if="captura.activa_descuento==1">
+        <div class="panel-body">
+            <div class="col-sm-12" style="width:100%;overflow: scroll;">
+                <table class="table table-hover table-bordered" style="width:1600px; height:100%">
+                    <tr style="text-align:center; font-weight:bold; border-bottom:6px; background-color:#f5f5f5">
+                        <td width="1%"></td>
+                        <td>Destinatario</td>
+                        <td>Direccion</td>
+                        <td>Telefono</td>
+                        <td>Servicio</td>
+                        <td>Ciudad Destino</td>
+                        <td>Unidades</td>
+                        <td>Peso</td>
+                        <td>Volumen</td>
+                        <td>$ Declarado</td>
+                        <td>$Flete</td>
+                        <td>$Flete V.</td>
+                        <td>$ Otros</td>
+                        <td>$ Total</td>
+
+                        <td class="danger">$Flete des.</td>
+                        <td class="danger">$Flete V.  des.</td>
+                        <td class="danger">$ Otros  des.</td>
+                        <td class="danger">$ Total  des.</td>
+                        <td>Cubrimiento</td>
+                    </tr>
+                    <tr align="center" ng-repeat="e in captura.info_envios" ng-if="$index > 0">
+                        <td ng-click="eliminarEnvio($index)"><a><i class="fa fa-trash" style="padding:0px"></i></a></td>
+                        <td>{{ e.nom_destinatario }}</td>
+                        <td>{{ e.dir_destinatario }}</td>
+                        <td>{{ e.tel_destinatario }}</td>
+                        <td>{{ e.cod_servicio }}</td>
+                        <td>{{ e.ciu_destino }}</td>
+                        <td>{{ e.unidades }}</td>
+                        <td>{{ e.peso }}</td>
+                        <td>{{ e.volumen }}</td>
+                        <td>{{ e.declarado | currency : "" : 0}}</td>
+
+                        <td>{{ e.valor_flete | currency : "" : 0}}</td>
+                        <td>{{ e.valor_costom | currency : "" : 0}}</td>
+                        <td>{{ e.valor_otros | currency : "" : 0}}</td>
+                        <td>{{ e.valor_total | currency : "" : 0}}</td>
+                        <td>{{ e.valor_fleted | currency : "" : 0}}</td>
+                        <td>{{ e.valor_costomd | currency : "" : 0}}</td>
+                        <td>{{ e.valor_otrosd | currency : "" : 0}}</td>
+                        <td>{{ e.valor_totald | currency : "" : 0}}</td>
+                        <td><b>Nacional</b></td>
+                    </tr>
+                </table>
+                <br />
+            </div>
+        </div>
+    </div>
+
+    <div class="alert alert-danger" ng-if="captura.activa_descuento==1 && captura.info_envios.length > 1">
+        <div class="form-group" style="font-weight:bold">
+            <label for="inputEmail3" class="col-sm-2 control-label">Total Fletes:</label>
+            <div class="col-sm-2 control-label" style="text-align:left"><b class="badge">{{ total_fletesd | currency : "" : 0}}</b></div>
+            <label for="inputEmail3" class="col-sm-2 control-label">% Descuento Autorizado:</label>
+            <div class="col-sm-2 control-label" style="text-align:left">
+                <select name="descuento" ng-model="captura.descuento" class="input-field" ng-change="calcularDescuentos()">
+                    <option value="" selected="selected">--Seleccione--</option>
+                    <option ng-repeat="d in captura.descuentos" value="{{d.Valor}}">{{d.Valor}}</option>
+                </select>
+
+            </div>
+            <label for="inputEmail3" class="col-sm-2 control-label">Nuevo total Fletes:</label>
+            <div class="col-sm-2 control-label" style="text-align:left"><b class="badge">{{ total_totald | currency : "" : 0}}</b></div>
+        </div>
+    </div>
+
+    <div class="form-group" ng-if="captura.activa_descuento!=1">
+        <div class="col-sm-4 input-icons"><i class="fas fa-calculator icon-button"></i><input type="button" value="Liquidar" ng-click="cotizar()" class="btn btn-primary input-field" style="text-transform:uppercase" /></div>
+        <div class="col-sm-4 input-icons"><i class="fas fa-check icon-button"></i><input type="button" name="action" ng-click="capturar()" value="Generar guía" class="btn btn-primary input-field" ng-disabled="isDisabledBotonGenerar" style="text-transform:uppercase" /></div>
+        <div class="col-sm-4 input-icons"><i class="fas fa-file icon-button"></i><input type="reset" value="Nuevo" class="btn btn-primary input-field" style="text-transform:uppercase" ng-click="volver()" /></div>
+    </div>
+
+    <div class="form-group" ng-if="captura.activa_descuento==1">
+        <div class="col-sm-4"><input type="button" value="Adicionar envio" ng-click="adicionarEnvio()" class="btn btn-primary" style="text-transform:uppercase" /></div>
+        <div class="col-sm-4"><input type="button" value="Nuevo" name="action" ng-click="capturar()" class="btn btn-primary" style="text-transform:uppercase" /></div>
+        <div class="col-sm-4"><input type="button" value="Finalizar envios" ng-disabled="isDisabledEnvios" class="btn btn-primary" style="text-transform:uppercase" ng-click="generarEnviosVarios()" /></div>
+    </div>
+
+    
+    <div id="myModal" class="modal fade" role="dialog" style="visibility:visible;">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" style="background:#bf0020; color:#fff; font-size:16px">
+                    <b>Liquidación envío</b>
+                    <button type="button" class="close" style="color:#fff" data-dismiss="modal">&times;</button><br />
+                </div>
+                <div id="myModalContentPopUp" style="font-size:14px; text-align:center">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="myModalG" class="modal fade" role="dialog" style="visibility:visible;">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" style="background:#bf0020; color:#fff; font-size:18px;">
+                    <b>Generación guía</b>
+                    <button type="button" class="close" style="color:#fff" data-dismiss="modal" ng-click="nuevo()">&times;</button>
+                </div>
+                <div id="myModalContentPopUpG" style="font-size:14px; text-align:center">
+                </div>
+                <div class='col-sm-12'>
+                    <table width="94%" border="0" align="center" style="font-size:14px">
+                        <tr>
+                            <td colspan="2" height="10px">
+                                <table border="0" align="center" style="font-size:14px">
+                                    <tr>
+                                        <td align="right">Rótulos:</td>
+                                        <td>
+                                            <div style="display:flex; justify-content:flex-end; align-items:center; gap:8px;">
+                                                <select id="drpTipoSticker" name="drpTipoSticker" ng-model="cola.sticker">
+                                                    <option value="" selected="selected">--Seleccione sticker--</option>
+                                                    <option ng-repeat="option in cola.stickers" value="{{option.Cod_Sticker}}">{{option.Des_Sticker}}</option>
+                                                </select>
+                                                
+                                                <button style="font-size:12px; padding:4px 6px; border-radius:3px;" ng-click="redireccionarRotulo()"><i class="fa fa-print"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>			
+                        </tr>
+                        <tr>
+                            <td><input type='button' name='action' data-dismiss="modal" ng-click='volver()' value='Nuevo Remitente' class='btn btn-primary' /></td>
+                            <td align="center">
+                                <input type='button' name='action' data-dismiss="modal" ng-click='nuevo()' value='Mismo Remitente' class='btn btn-primary' />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" height="10px"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="myModalVarias" class="modal fade" role="dialog" style="visibility:visible;">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" style="background:#bf0020; color:#fff; font-size:16px">
+                    <b>Guias multiples</b>
+                    <button type="button" class="close" style="color:#fff" data-dismiss="modal" ng-click="volver()">&times;</button><br />
+                </div>
+                <br />
+                <div id="myModalContentPopUpVarias" style="font-size:14px; text-align:center">
+                </div>
+                <br />
+            </div>
+        </div>
+    </div>
+
+    <div id="myModalAyuda" class="modal fade" role="dialog" style="visibility:visible;">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" style="background:#bf0020; color:#fff; font-size:16px">
+                    <b>Ayuda</b>
+                    <button type="button" class="close" style="color:#fff" data-dismiss="modal">&times;</button><br />
+                </div>
+                <br />
+                <div id="myModalContentAyuda" style="font-size:14px; text-align:center">
+                </div>
+                <br />
+            </div>
+        </div>
+    </div>
+
+    <div id="myModalCiceg" class="modal fade" role="dialog" style="visibility:visible;">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" style="background:#bf0020; color:#fff; font-size:16px">
+                    <b><i>envía y gana</i></b>
+                    <button type="button" class="close" style="color:#fff" data-dismiss="modal">&times;</button><br />
+                </div>
+                <div id="myModalContentPopUpCiceg" style="font-size:14px; text-align:center">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="myModalDireccionesSug" class="modal fade" role="dialog" style="visibility:visible;">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" style="background:#bf0020; color:#fff; font-size:16px">
+                    <b><i>Direccion incorrecta!</i></b>
+                    <button type="button" class="close" style="color:#fff" data-dismiss="modal">&times;</button><br />
+                </div>
+                <div id="myModalContentPopUpCiceg" style="font-size:14px; text-align:center">
+                    
+                    <div class="form-group" ng-show="CorregirDireccion">
+                        <label for="inputEmail3" class="col-sm-4 control-label">
+                            Cambiar Dirección?
+                        </label>
+                        <div class="col-sm-4">
+                            <div class="radio radio-styled">
+                                <label>
+                                    <input type="radio" name="opcion" ng-model="check2" value="3" checked="">
+                                    <span>Si</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="radio radio-styled">
+                                <label>
+                                    <input type="radio" name="opcion" ng-model="check2" value="4" checked="">
+                                    <span>No </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" ng-show="CorregirDireccion">
+                        <label for="inputEmail3" class="col-sm-4 control-label">Dirección:</label>
+                        <div class="col-sm-6 input-icons">
+                            <i class="fas fa-map-marker-alt icon"></i>
+                            <input type="text" id="txtDirDestinatario2" ng-disabled="!(check2==3)" name="txtDirDestinatario" class="input-field" placeholder="Direccion destinatario" ng-model="captura.dir_destinatario">
+                            
+                            <i class="fas fa-check-alt icon" ng-show="isVisibleMcaDirecc"></i>
+                        </div>
+                        <div class="col-sm-2 input-icons">
+                            <input type="button" ng-disabled="!(check2==3)" name=" action" value="Validar" class="btn btn-primary input-field" ng-click="consultarSugeridas()" /> 
+                        </div>
+                    </div>
+                    <div class="form-group" ng-show="check===1">
+                        <label for="inputEmail3" class="col-sm-4 control-label">Direcciones sugeridas:</label>
+                        <div class="col-sm-8 input-icons">
+                            <i class="fas fa-map-marker-alt icon"></i>
+                            <select name="DirecionS" ng-model="captura.Direcion_S" ng-disabled="!(check2==3)" class="input-field" ng-change="Actualizar_Direccion()">
+                                <option value="" selected="selected">--Seleccione--</option>
+                                <option ng-model="selectedItem" ng-repeat="option in captura.DirecionS" value="{{option.Dir_Destinatario}}">{{option.Dir_Destinatario}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-show="(check2==4)">
+                        <div col-sm-8 input-icons>
+                            <h3 style="color:#D4001B">Tenga encuenta que la guia se marcara con novedad!</h3>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12 input-icons">
+                            <input type="button" ng-disabled="!(check2)" name=" action" data-dismiss="modal" value="Guardar" class="btn btn-primary input-field" ng-click="Asignar_Direccion()" /> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    
+    <div id="ModalPDVAutorizados" class="modal fade" role="dialog">
+        <div class="modal-dialog" style="width: 900px;">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" style="background-color:#444; color:white">
+                                Receptorias autorizadas para entrega en Oficina
+                            </div>
+                            <div class="panel-body" style="width:100%; height:100%; font-size:11px;width:100%;">
+                                <table class="table table-hover table-bordered">
+                                    <tr>
+                                        <td>
+                                            <table border="0" style="width: 100%; border-collapse: collapse;">
+                                                <tr>
+                                                    <td style="width: 20%;">Ciudad</td>
+                                                    <td style="width: 60%;">
+                                                        <select id="drpRegionalO1" name="drpRegionalO1" ng-model="captura.reg1_origen" class="input-field">
+                                                            <option value="" selected="selected">--Seleccione origen--</option>
+                                                            <option ng-repeat="option in captura.ciudades" value="{{option.Cod_Ciudad}}">{{option.Ciudad}}</option>
+                                                        </select>
+                                                    </td>
+                                                    <td align="center" style="width: 20%;"><button ng-click="buscarPDV()" class="btn btn-primary"><i class="fa fa-search"></i></button></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table border="0" style="width: 100%; border-collapse: collapse;">
+                                                <tr>
+                                                    <td style="width: 5%;"></td>
+                                                    <td style="width: 5%;">Oficina</td>
+                                                    <td style="width: 20%;">Nombre</td>
+                                                    <td style="width: 15%;">Ciudad</td>
+                                                    <td style="width: 45%;">Direccion</td>
+                                                    <td style="width: 5%;">Telefono</td>
+                                                    <td ng-show="false" style="width: 0%;"></td>
+                                                </tr>
+                                                <tr ng-click="selectRow(g)" ng-repeat="g in captura.pdvAutorizados_EntregarGuias track by $index">
+                                                    <td><input type="checkbox" ng-checked="selectedPdv === g" /></td>
+                                                    <td style="white-space: nowrap;">{{ g.CodigoOf }}</td>
+                                                    <td style="white-space: nowrap;">{{ g.Nom_Oficina }}</td>
+                                                    <td style="white-space: nowrap;">{{ g.Ciudad }}</td>
+                                                    <td style="white-space: nowrap;">{{ g.Dir_Oficina }}</td>
+                                                    <td style="white-space: nowrap;">{{ g.Tel_Oficina }}</td>
+                                                    <td ng-show="false">{{ g.Cod_Ciudad }}</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="regresar()">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="ModalReferencias" class="modal fade" role="dialog">
+        <div class="modal-dialog" style="width: 900px;">
+            <div class="modal-content">
+                <div class="modal-header" style="background:#bf0020; color:#fff; font-size:16px">
+                    <b>Verifica Referencias</b>
+                    <button type="button" class="close" style="color:#fff" data-dismiss="modal">&times;</button><br />
+                </div>
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="panel panel-default">
+                            <div class="panel-body" style="width:100%; height:100%; font-size:11px;width:100%;">
+                                <table class="table table-hover table-bordered">
+                                    <tr>
+                                        <td>
+                                            <table border="0" style="width: 100%; border-collapse: collapse;">
+                                                <tr>
+                                                    <td style="width: 20%;">Referencia</td>
+                                                    <td style="width: 60%;">
+                                                        <select id="cboReferencias_" name="cboReferencias_" ng-model="captura.cboReferencias" class="input-field">
+                                                            <option value="" selected="selected">--Seleccione Referencia--</option>
+                                                            <option ng-repeat="option in captura.referencias" value="{{option.Ref_Producto}}">{{option.Descripcion}}</option>
+                                                        </select>
+                                                    </td>
+                                                    <td align="center" style="width: 20%;"><button ng-click="seleccionarReferencia()" class="btn btn-primary"><i class="fa fa-search"></i></button></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            
+                                            <table class=" table table-bordered table-hover">
+                                                <tr align="center" style="font-weight:bold">
+                                                    <td>#</td>
+                                                    <td>Producto</td>
+                                                    <td>Peso Kg</td>
+                                                    <td>Peso Vol</td>
+                                                    <td>Kg cobrar</td>
+                                                    <td>Vr.Declarado</td>
+                                                    <td>Unidades</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr align="center">
+                                                    <td></td>
+                                                    <td><input type="text" id="txtreferencia_descripcion" name="txtreferencia_descripcion" ng-model="referencia.descripcion" style="width:56px; text-align:center" maxlength="4" readonly="readonly"></td>
+                                                    <td><input type="text" id="txtreferencia_peso" name="txtreferencia_peso" ng-model="referencia.peso" style="width:56px; text-align:center" maxlength="4" readonly="readonly"></td>
+                                                    <td><input type="text" id="txtreferencia_volumen" name="txtreferencia_volumen" ng-model="referencia.volumen" style="width:56px; text-align:center" maxlength="4" readonly="readonly"></td>
+                                                    <td><input type="text" id="txtreferencia_kgcobrar" name="txtreferencia_peso" ng-model="referencia.kgcobrar" style="width:56px; text-align:center" maxlength="4" readonly="readonly"></td>
+                                                    <td><input type="text" id="txtreferencia_declarado" name="txtreferencia_declarado" ng-model="referencia.declarado" style="width:56px; text-align:center" maxlength="10"></td>
+                                                    <td><input type="text" id="txtreferencia_unidades" name="txtreferencia_unidades" ng-model="referencia.unidades" style="width:56px; text-align:center" maxlength="4"></td>
+                                                    <td><input type="button" ng-click="agregarReferencia()" value="+" class="btn btn-primary"></td>
+                                                </tr>
+                                                <tr ng-repeat="c in captura.refer" ng-if="$index > 0" align="center">
+                                                    <td><b>{{ $index }}</b></td>
+                                                    <td>{{ c.producto }}</td>
+                                                    <td>{{ c.peso }}</td>
+                                                    <td>{{ c.volumen }}</td>
+                                                    <td>{{ c.kgcobr }}</td>
+                                                    <td>{{ c.vrdecl }}</td>
+                                                    <td>{{ c.unds }}</td>
+                                                    <td ng-click="eliminarReferencia($index)"><a><i class="fa fa-trash" style="padding:0px"></i></a></td>
+                                                </tr>
+                                                <tr align="center" style="font-weight:bold" class="danger" ng-if="captura.refer.length > 1">
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>{{ total_referencia_peso }}</td>
+                                                    <td>{{ total_referencia_volumen }}</td>
+                                                    <td>{{ total_referencia_kgcobrar }}</td>
+                                                    <td>{{ total_referencia_declarado }}</td>
+                                                    <td>{{ total_referencia_unidades }}</td>
+                                                    <td></td>
+                                                </tr>
+                                            </table>
+                                            
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="regresarReferencias()">Regresar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="ModalCubicacion" class="modal fade" role="dialog">
+        <div class="modal-dialog" style="width: 900px;">
+            <div class="modal-content">
+                <div class="modal-header" style="background:#bf0020; color:#fff; font-size:16px">
+                    <b>Cubicacion de Unidades</b>
+                    <button type="button" class="close" style="color:#fff" data-dismiss="modal">&times;</button><br />
+                </div>
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="panel panel-default">
+                            <div class="panel-body" style="width:100%; height:100%; font-size:11px;width:100%;">
+                                <table class="table table-hover table-bordered">
+                                    <tr>
+                                        <td>
+                                            <table class=" table table-bordered table-hover">
+                                                <tr align="center" style="font-weight:bold">
+                                                    <td>#</td>
+                                                    <td>Unds</td>
+                                                    <td>Peso Unit Kg</td>
+                                                    <td>Alto</td>
+                                                    <td>Ancho</td>
+                                                    <td>Largo</td>
+                                                    <td>Volumen</td>
+                                                    <td>Cobrar</td>
+                                                </tr>
+                                                <tr align="center">
+                                                    <td></td>
+                                                    <td><input type="text" ng-model="captura.unidades" style="width:56px; text-align:center" maxlength="4"></td>
+                                                    <td><input type="text" ng-model="captura.peso" style="width:56px; text-align:center" maxlength="4"></td>
+                                                    <td><input type="text" ng-model="captura.alto" placeholder="cms" style="width:56px; text-align:center" maxlength="4"></td>
+                                                    <td><input type="text" ng-model="captura.largo" placeholder="cms" style="width:56px; text-align:center" maxlength="4"></td>
+                                                    <td><input type="text" ng-model="captura.ancho" placeholder="cms" style="width:56px; text-align:center" maxlength="4"></td>
+                                                    <td><input type="text" ng-model="captura.pesoVol_" style="width:40px; text-align:center; border:none; background:transparent; box-shadow:none; outline:none" maxlength="4"></td>
+                                                    <td></td>
+                                                    <td><input type="button" ng-click="agregarCubicacion()" value="+" class="btn btn-primary"></td>
+                                                </tr>
+                                                <tr ng-repeat="c in captura.cubicacion" ng-if="$index > 0" align="center">
+                                                    <td><b>{{ $index }}</b></td>
+                                                    <td>{{ c.unidades }}</td>
+                                                    <td>{{ c.peso }}</td>
+                                                    <td>{{ c.alto }}</td>
+                                                    <td>{{ c.largo }}</td>
+                                                    <td>{{ c.ancho }}</td>
+                                                    <td>{{ c.volumen_k }}</td>
+                                                    <td>{{ c.peso_kobrar }}</td>
+                                                    <td ng-click="eliminarCubicacion($index)"><a><i class="fa fa-trash" style="padding:0px"></i></a></td>
+                                                </tr>
+                                                <tr align="center" style="font-weight:bold" class="danger" ng-if="captura.cubicacion.length > 1">
+                                                    <td></td>
+                                                    <td>{{ total_uni }}</td>
+                                                    <td>{{ total_peso }}</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>{{ total_volumen_k }}</td>
+                                                    <td>{{ total_cobrar }}</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="regresarCubicacion()">Regresar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+    
+    <div id="ModalEficacia" class="modal fade" role="dialog">
+        <div class="modal-dialog" style="width: 700px;height:50%">
+            <div class="modal-content">
+                <div class="modal-header" style="background:#bf0020; color:#fff; font-size:16px">
+                    <b>Manejo Centros de Costo Eficacia</b>
+                    <button type="button" class="close" style="color:#fff" data-dismiss="modal">&times;</button><br />
+                </div>
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="panel panel-default">
+                            <div class="panel-body" style="width:100%; height:80%; font-size:11px;width:100%;">
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-body" style="width:100%; height:100%; font-size:11px; overflow: scroll;">
+                                                <table cellspacing="1" cellpadding="1" border="0" style="border-collapse: collapse; font-size: medium;">
+                                                    <tr>
+                                                        <td width="100">Regional</td>
+                                                        <td width="400">
+                                                            <select id="cboRegional" name="cboRegional" ng-model="panel.cboRegional_">
+                                                                <option value="" selected="selected">--Seleccione Regional--</option>
+                                                                <option ng-repeat="option in panel.cboRegional" value="{{option.Cod_Regional}}">{{option.Des_Regional}}</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="100">Ciudad</td>
+                                                        <td width="400">
+                                                            <select id="cboCiudad" name="cboCiudad" ng-model="panel.cboCiudad_">
+                                                                <option value="" selected="selected">--Seleccione Ciudad--</option>
+                                                                <option ng-repeat="option in panel.cboCiudad" value="{{option.Cod_Ciudad}}">{{option.Nom_Ciudad}}</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="100">Division</td>
+                                                        <td width="400">
+                                                            <select id="cboDivision" name="cboDivision" ng-model="panel.cboDivision_" ng-change="tipoSeleccionado()">
+                                                                <option value="" selected="selected">--Seleccione Division--</option>
+                                                                <option ng-repeat="option in panel.cboDivision" value="{{option.Cod_Division}}">{{option.Nom_Division}}</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="100">C.De Costo</td>
+                                                        <td width="400">
+                                                            <select id="cboCentro_Costo" name="cboCentro_Costo" ng-model="panel.cboCentro_Costo_">
+                                                                <option value="" selected="selected">--Seleccione Ceco--</option>
+                                                                <option ng-repeat="option in panel.cboCentro_Costo" value="{{option.Cod_Centro_Costo}}">{{option.Nom_Centro_Costo}}</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="regresarEficacia()">Regresar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+</div>
+
+
+                    </div>
+                </div>
+
+            </div>
+            <footer>
+                <p>&copy; 2026 - <i><b style="color:#ba0020">envía</b></i> HADESCTM2</p> 
+            </footer>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
+
+
+<script src="/OLC/Scripts/angular.min.js"></script>
+
+<script src="/OLC/Scripts/angular-route.min.js"></script>
+<script type="text/javascript" src="/OLC/Scripts/angular-js-xlsx.js"></script>
+<script type="text/javascript" src="/OLC/Scripts/ng-file-upload.min.js"></script>
+<script type="text/javascript" src="/OLC/Scripts/xlsx.full.min.js"></script>
+<script src="/OLC/Scripts/app.js"></script>
+<script src="/OLC/Scripts/table2excel.js"></script>
+
+<script src="/OLC/Controllers/js/CapturarOS.js?v=1.0.4."></script>
+<script src="/OLC/Controllers/js/ConsultarGuias.js?v=1.0.4."></script>
+<script src="/OLC/Controllers/js/CapturarGuia.js?v=1.0.4."></script>
+<script src="/OLC/Controllers/js/CargarArchivo.js?v=1.0.4."></script>
+<script src="/OLC/Controllers/js/PanelNovedades.js?v=1.0.4."></script>
+<script src="/OLC/Controllers/js/ConsultarOS.js?v=1.0.4."></script>
+<script src="/OLC/Controllers/js/ConsultarDestinatarios.js?v=1.0.4."></script>
+<script src="/OLC/Controllers/js/LiquidarEnvio.js?v=1.0.4."></script>
+<script src="/OLC/Controllers/js/OS.js?v=1.0.4."></script>
+
+<script src="/OLC/ScriptsNg/CapturarGuia.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/CargarArchivoOS.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/CapturarOS.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/ColaImpresion.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/ConsultarGuia.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/EstadisticaReparto.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/CargarArchivoN.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/PanelNovedades.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/PanelNovedadesOS.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/FormularioPQR.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/LiquidarGuia.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/ConsultarOS.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/AnularOS.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/ConsultarGuias.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/ReporteProduccion.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/CargarArchivoSoluciones.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/AnularGuia.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/CargarArchivo.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/InfoEspecialCorteCroydon.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/InfoEspecialTugo.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/InfoEspecialAlkosto.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/InfoEspecialRepartoRecaudo.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/GuiaNovedad45.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/ConsultarDestinatarios.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/RelacionDespacho.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/AdministraDestinatarios.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/Login.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/ConsultarCartera.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/CargarArchivoP.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/CambioClave.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/ConfigurarArchivo.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/FactCartera.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/AdminUsuarios.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/MonitorRecoleccion.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/ConsultarPQR.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/MonitorReparto.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/Cuenta.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/ReliquidacionManual.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/AdminCecosEficacia.js?v=1.0.4."></script>
+
+<script src="/OLC/Scripts/ngStorage.min.js"></script>
+<script src="/OLC/Scripts/checklist-model.js"></script>
+<script src="/OLC/Content/sweetalert2/sweetalert2.all.min.js"></script>
+
+
+
+

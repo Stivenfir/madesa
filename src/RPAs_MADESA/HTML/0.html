@@ -1,0 +1,80 @@
+
+
+<html ng-app="online" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8,9,10,11" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>OnLine Corporativo v=1.0.4.</title>
+    <link href="/OLC/Content/Index.css" rel="stylesheet" />
+    <link href="/OLC/Content/medidas.css" rel="stylesheet" />
+    <link href="/OLC/Content/Mensajes.css" rel="stylesheet" />
+    <link href="/OLC/content/bootstrap.css?n=1" rel="stylesheet" />
+    <link href="/OLC/content/floating-labels.css" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="/OLC/content/font-awesome/css/font-awesome.min.css" />
+    <link type="text/css" rel="stylesheet" href="/OLC/content/font-awesome/css/all.css" />
+
+</head>
+
+
+<body style="background-image:url('~/imagenes/bg2.jpg'); height:100%; background-size:cover; background-repeat:no-repeat">
+         <form class="form-signin">
+        <div ng-controller="LoginController">
+            
+            <div class="form-signin">
+                <div class="form-inline" style="text-align:center">
+                    <img src="/OLC/imagenes/logo-login.gif" />
+                </div>
+                <div class="panel panel-default" style="border-radius:10px">
+                    
+                    <div class="panel-body" style="padding:18px">
+                        <div class="form-group">
+                            <div class="col-sm-12 input-icons">
+                                <b>envía</b> online corporativo
+                            </div>
+                        </div>
+                        <div class="form-group" style="padding:4px">
+                            <div class="col-sm-12 input-icons">
+                                <i class="fas fa-user icon"></i>
+                                <input type="text" id="txtUsuario" name="txtUsuario" class="input-field" placeholder="Usuario" ng-model="usuario" required="required" autofocus />
+                            </div>
+                        </div>
+                        <div class="form-group" style="padding:4px">
+                            <div class="col-sm-12 input-icons">
+                                <i class="fas fa-lock icon"></i>
+                                <input type="password" class="input-field" placeholder="Password" ng-model="password" />
+                            </div>
+                        </div>
+                        <div class="form-group" style="padding:4px">
+                            <div class="col-sm-12 input-icons">
+                                <i class="fas fa-check icon-button"></i>
+                                <input type="button" name="action" ng-click="ingresar()" value="Ingresar online" class="btn btn-primary btn-block input-field" />
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="form-inline" style="text-align:center">
+                &copy; 2026 - <i><b style="color:#ba0020">envía</b></i> <code>HADESCTM2</code>
+                    <br />
+                    <span ng-show="isCargando" class="viewLoading">
+                        <img src="/OLC/Imagenes/ng-loader.gif" /> <b>Ingresando</b>...
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+
+<script src="/OLC/Scripts/angular.min.js"></script>
+<script src="/OLC/Scripts/angular-route.min.js"></script>
+<script type="text/javascript" src="/OLC/Scripts/ng-file-upload.min.js"></script>
+<script type="text/javascript" src="/OLC/Scripts/xlsx.full.min.js"></script>
+
+<script src="/OLC/Scripts/app.js?v=1.0.4."></script>
+<script src="/OLC/ScriptsNg/Login.js?v=1.0.4."></script>
+<script src="/OLC/Scripts/ngStorage.min.js"></script>

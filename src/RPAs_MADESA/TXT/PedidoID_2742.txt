@@ -1,0 +1,1 @@
+"{\"respuesta\":\"\",\"k_cobrados\":45,\"valor_flete\":19575,\"valor_costom\":15000,\"valor_otros\":0,\"dias_entrega\":1,\"guia\":\"014156579083\",\"urlguia\":\"https://hub.envia.co/2impresionGuias/Guia3.aspx?Usuario=6A70BLAN&Guia=014156579083\",\"num_ordens\":null,\"cod_postaldestino\":\"110921498\",\"cubrimiento\":null,\"bt64\":null}"

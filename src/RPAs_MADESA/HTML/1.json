@@ -1,0 +1,41 @@
+{
+    "Cod_Regional": 1,
+    "Cod_Oficina": 1,
+    "Cod_Cuenta": 15739,
+    "Num_Cliente": "900174994-7",
+    "Nom_Cliente": "ABC CARGO EXPRESS SAS",
+    "Usuario": "6A70BLAN",
+    "Password": "6A70028A",
+    "Contacto": "ELKIN.BLANCO",
+    "Email": "EBLANCO@ABCCARGOEXPRESS.COM",
+    "Mca_TipoUsr": "1",
+    "Cuentas": [
+        {
+            "Cod_Regional": 1,
+            "Cod_Oficina": 1,
+            "Cod_Cuenta": 15739,
+            "Cuenta": "01-001-15739 : ABC CARGO EXPRESS SAS",
+            "CuentaSin": "01-001-15739",
+            "Nom_Cuenta": null,
+            "Dir_Cuenta": null,
+            "Tel_Cuenta": null,
+            "Num_Cliente": null,
+            "Email_Cuenta": null,
+            "Cod_Ciudad": 0,
+            "Nom_Ciudad": null,
+            "Cod_Postal": null,
+            "Mca_ClientePDV": 0,
+            "Fec_Modifica": null,
+            "Mca_LiquidaRecaudo": 0
+        }
+    ],
+    "Nits": [
+        {
+            "Num_Cliente": "900174994-7",
+            "Nom_Cliente": "ABC CARGO EXPRESS SAS"
+        }
+    ],
+    "Token": "651cd651d",
+    "Fec_Modifica": null,
+    "Mca_Activo": "1"
+}

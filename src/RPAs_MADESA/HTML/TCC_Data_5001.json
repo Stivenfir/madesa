@@ -1,0 +1,76 @@
+{
+    "numerodespacho": "3227166502",
+    "fechadespacho": "2026-03-06",
+    "solicitudrecogida": {
+        "numero": null,
+        "fecha": "2026-03-06",
+        "ventanainicio": "2026-03-06T14:00:00",
+        "ventanafin": "2026-03-06T16:00:00"
+    },
+    "unidadnegocio": "1",
+    "cuentaremitente": 1485100,
+    "sederemitente": null,
+    "primernombreremitente": "",
+    "segundonombreremitente": "",
+    "primerapellidoremitente": "",
+    "segundoapellidoremitente": "",
+    "razonsocialremitente": "ABC CARGO EXPRESS SAS",
+    "contactoremitente": "",
+    "tipoidentificacionremitente": "NIT",
+    "identificacionremitente": "900174994-7",
+    "direccionremitente": "AVENIDA CALLE 24 # 95-12  BODEGA 45 PARQUE INDUSTRIAL PORTOS",
+    "ciudadorigen": "11001000",
+    "telefonoremitente": "3223817102",
+    "emailremitente": "EBLANCO@ABCCARGOEXPRESS.COM",
+    "destinatarios": [
+        {
+            "numerocontrol": "1",
+            "numeroremesa": null,
+            "numeroreferenciacliente": "",
+            "tipoidentificaciondestinatario": "CC",
+            "identificaciondestinatario": "123456789",
+            "sededestinatario": "",
+            "primernombredestinatario": "JOSE",
+            "segundonombredestinatario": "",
+            "primerapellidodestinatario": "LOPEZ",
+            "segundoapellidodestinatario": "",
+            "razonsocialdestinatario": "JOSE LOPEZ",
+            "contactodestinatario": "",
+            "direcciondestinatario": "CARRERA 10 # 15D-27 TIERRALINDA 1 APTO 704 TORRE C FACATATIVA FACATATIVA CUNDINAMARCA",
+            "telefonodestinatario": "573107676339",
+            "ciudaddestino": "FACATATIVA|CUNDINAMARCA",
+            "formapago": "8",
+            "llevabodega": "false",
+            "recogebodega": "false",
+            "centrocostos": "",
+            "tiposervicio": "0",
+            "observaciones": "",
+            "recaudoproducto": "0",
+            "unidades": [
+                {
+                    "tipounidad": "TIPO_UND_PAQ",
+                    "tipoempaque": "",
+                    "claseempaque": "CLEM_GRANDE",
+                    "dicecontener": "21055Z1",
+                    "kilosreales": "43.60",
+                    "largo": "186.40",
+                    "alto": "9.90",
+                    "ancho": "47.30",
+                    "pesovolumen": "",
+                    "valormercancia": "126078.32",
+                    "codigobarras": "",
+                    "numerobolsa": "",
+                    "referencias": "",
+                    "unidadesinternas": "1"
+                }
+            ],
+            "documentosreferencia": [
+                {
+                    "tipodocumento": "FA",
+                    "numerodocumento": "102055586446",
+                    "fechadocumento": "2021-04-01"
+                }
+            ]
+        }
+    ]
+}

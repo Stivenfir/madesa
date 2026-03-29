@@ -1,0 +1,17 @@
+{
+    "numerodespacho": null,
+    "remesas": [
+        {
+            "numerocontrol": "1",
+            "numeroremesa": "446861824",
+            "numerosolicitud": "400583668",
+            "documentosreferencia": "",
+            "codigoresultado": "0",
+            "mensajeresultado": "Se ha grabado con exito la remesa y la unidad (FPR:2026-03-25) , su servicio de recogida quedó programado para el dia 25/03/2026 "
+        }
+    ],
+    "urlrelacionenvio": "https://testsomos.tcc.com.co/Informesdsp.aspx?opc=6&formato=C&despacho=null&fuente=CLITCC20240OLPBZGKAK&TipoNaturaleza=&PrimerNombre=ABC CARGO EXPRESS SAS&SegundoNombre=null&PrimerApellido=null&SegundoApellido=null&NumeroIdentificacion=900174994-7&idRemesas=15534512-PQ,",
+    "urlrotulos": "https://testsomos.tcc.com.co/Informesdsp.aspx?opc=1&tipo=REMESAS&modelos=1,1,649&naturaleza=&tipoIdentificacion=&numeroIdentificacion=&ids=15534512-TEMPORAL,",
+    "codigoresultado": "0",
+    "mensajeresultado": "Se han procesado satisfactoriamente (1) despachos enviados."
+}

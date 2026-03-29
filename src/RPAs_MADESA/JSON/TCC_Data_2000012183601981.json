@@ -1,0 +1,108 @@
+{
+    "numerodespacho": "2000012183601981",
+    "fechadespacho": "2026-03-24",
+    "solicitudrecogida": {
+        "numero": null,
+        "fecha": "2026-03-24",
+        "ventanainicio": "2026-03-24T14:00:00",
+        "ventanafin": "2026-03-24T16:00:00"
+    },
+    "unidadnegocio": "1",
+    "cuentaremitente": "1485100",
+    "sederemitente": null,
+    "primernombreremitente": "",
+    "segundonombreremitente": "",
+    "primerapellidoremitente": "",
+    "segundoapellidoremitente": "",
+    "razonsocialremitente": "ABC CARGO EXPRESS SAS",
+    "contactoremitente": "",
+    "tipoidentificacionremitente": "NIT",
+    "identificacionremitente": "900174994-7",
+    "direccionremitente": "AVENIDA CALLE 24 # 95-12  BODEGA 45 PARQUE INDUSTRIAL PORTOS",
+    "ciudadorigen": "11001000",
+    "telefonoremitente": "3223817102",
+    "emailremitente": "EBLANCO@ABCCARGOEXPRESS.COM",
+    "destinatarios": [
+        {
+            "numerocontrol": "1",
+            "numeroremesa": null,
+            "numeroreferenciacliente": "",
+            "tipoidentificaciondestinatario": "CC",
+            "identificaciondestinatario": "123456789",
+            "sededestinatario": "",
+            "primernombredestinatario": "MARCO",
+            "segundonombredestinatario": "",
+            "primerapellidodestinatario": "ANTONIO",
+            "segundoapellidodestinatario": "GONZALEZ",
+            "razonsocialdestinatario": "MARCO ANTONIO GONZALEZ",
+            "contactodestinatario": "",
+            "direcciondestinatario": "CRA. 39 B # 3 - 29 SN / BLOQUE 2 APTO 403 REFERENCIA: CONJUNTO MULTIFAMILIAR NARINO. PUENTE ARANDA. PUENTE ARANDA",
+            "telefonodestinatario": "3102284921",
+            "ciudaddestino": "|",
+            "formapago": "8",
+            "llevabodega": "false",
+            "recogebodega": "false",
+            "centrocostos": "",
+            "tiposervicio": "TISE_NORMAL_PAQ",
+            "observaciones": "2000012183601981 RUTA:36079",
+            "recaudoproducto": "0",
+            "unidades": [
+                {
+                    "tipounidad": "TIPO_UND_PAQ",
+                    "tipoempaque": "",
+                    "claseempaque": "CLEM_GRANDE",
+                    "dicecontener": "42565Z2TSIM",
+                    "kilosreales": "13",
+                    "largo": "96",
+                    "alto": "35",
+                    "ancho": "47",
+                    "pesovolumen": "",
+                    "valormercancia": "55797",
+                    "codigobarras": "",
+                    "numerobolsa": "",
+                    "referencias": "",
+                    "unidadesinternas": "1"
+                },
+                {
+                    "tipounidad": "TIPO_UND_PAQ",
+                    "tipoempaque": "",
+                    "claseempaque": "CLEM_GRANDE",
+                    "dicecontener": "52757G2.1",
+                    "kilosreales": "23",
+                    "largo": "165",
+                    "alto": "3",
+                    "ancho": "96",
+                    "pesovolumen": "",
+                    "valormercancia": "64004",
+                    "codigobarras": "",
+                    "numerobolsa": "",
+                    "referencias": "",
+                    "unidadesinternas": "1"
+                },
+                {
+                    "tipounidad": "TIPO_UND_PAQ",
+                    "tipoempaque": "",
+                    "claseempaque": "CLEM_GRANDE",
+                    "dicecontener": "53555Z2.2",
+                    "kilosreales": "17",
+                    "largo": "95",
+                    "alto": "10",
+                    "ancho": "41",
+                    "pesovolumen": "",
+                    "valormercancia": "59257",
+                    "codigobarras": "",
+                    "numerobolsa": "",
+                    "referencias": "",
+                    "unidadesinternas": "1"
+                }
+            ],
+            "documentosreferencia": [
+                {
+                    "tipodocumento": null,
+                    "numerodocumento": null,
+                    "fechadocumento": null
+                }
+            ]
+        }
+    ]
+}

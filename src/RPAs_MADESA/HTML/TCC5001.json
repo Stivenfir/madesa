@@ -1,0 +1,8 @@
+{
+    "numerodespacho": null,
+    "remesas": null,
+    "urlrelacionenvio": null,
+    "urlrotulos": null,
+    "codigoresultado": "-1",
+    "mensajeresultado": "Se ha presentado un error NO controlado en el proceso de grabación de remesas: Operación no válida en datos nulos"
+}

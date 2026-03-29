@@ -1,0 +1,15 @@
+{	
+    "sqlpypet2": "src\\SQLPet.bat ",
+    "sqlpypet": "src\\PYTHON\\python.exe src\\SQLPet.py ",	
+    "freegpt": "src\\PYTHON\\python.exe src\\apiGPT.py ",	
+    "radicaedidian": "src\\DeclaracionesSIGLO-XXI\\PYTHON\\pythonw.exe -m CargaEDI ",
+    "aceptadecldian": "src\\DeclaracionesSIGLO-XXI\\PYTHON\\pythonw.exe -m AceptDcl ",
+    "levantedcldian": "src\\DeclaracionesSIGLO-XXI\\PYTHON\\pythonw.exe -m Levante ",
+	"anticipadadcldian": "src\\DeclaracionesSIGLO-XXI\\PYTHON\\pythonw.exe -m Anticipada ",
+	"xtractregistrosdata": "src\\PYTHON\\python.exe src\\ExtractorPDF_RegistrosTerceros\\m.py ",
+    "consultainventarios": "src\\DeclaracionesSIGLO-XXI\\PYTHON\\pythonw.exe -m ConsultaInventarios ",
+    "getinfopedidosmadesa": "src\\PYTHON\\python.exe -m  RPAs_MADESA.GetInfo_Madesa",
+    "consultarguiasmadesaenvia":"src\\PYTHON\\python.exe -m  RPAs_MADESA.ConsultarGuias_Envia ",
+    "consultarguiasmadesatcc":"src\\PYTHON\\python.exe -m  RPAs_MADESA.ConsultarGuias_TCC",
+    "consultausrabc": "\"C:\\Program Files\\PowerShell\\7\\pwsh.exe\" -NoProfile -ExecutionPolicy Bypass -File src\\LDAP\\CheckUsr.ps1 "
+}

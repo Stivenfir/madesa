@@ -1,0 +1,76 @@
+{
+    "numerodespacho": "2000012184454651",
+    "fechadespacho": "2026-03-24",
+    "solicitudrecogida": {
+        "numero": null,
+        "fecha": "2026-03-24",
+        "ventanainicio": "2026-03-24T14:00:00",
+        "ventanafin": "2026-03-24T16:00:00"
+    },
+    "unidadnegocio": "1",
+    "cuentaremitente": "1485100",
+    "sederemitente": null,
+    "primernombreremitente": "",
+    "segundonombreremitente": "",
+    "primerapellidoremitente": "",
+    "segundoapellidoremitente": "",
+    "razonsocialremitente": "ABC CARGO EXPRESS SAS",
+    "contactoremitente": "",
+    "tipoidentificacionremitente": "NIT",
+    "identificacionremitente": "900174994-7",
+    "direccionremitente": "AVENIDA CALLE 24 # 95-12  BODEGA 45 PARQUE INDUSTRIAL PORTOS",
+    "ciudadorigen": "11001000",
+    "telefonoremitente": "3223817102",
+    "emailremitente": "EBLANCO@ABCCARGOEXPRESS.COM",
+    "destinatarios": [
+        {
+            "numerocontrol": "1",
+            "numeroremesa": null,
+            "numeroreferenciacliente": "",
+            "tipoidentificaciondestinatario": "CC",
+            "identificaciondestinatario": "123456789",
+            "sededestinatario": "",
+            "primernombredestinatario": "CESPEDES",
+            "segundonombredestinatario": "ORTEGA",
+            "primerapellidodestinatario": "JOHANA",
+            "segundoapellidodestinatario": "MARCELA",
+            "razonsocialdestinatario": "CESPEDES ORTEGA JOHANA MARCELA",
+            "contactodestinatario": "",
+            "direcciondestinatario": "CARRERA 50A 19 SUR-23 / REFERENCIA: POR LA CARRERA 50 DE NORTE A SUR. GIRAR UNA CUADRA ANTES DE LLEGAR A LA PRIMERA DE MAYO. DESPUES DE DOMINOS. PUENTE ARANDA. PUENTE ARANDA",
+            "telefonodestinatario": "3117769366",
+            "ciudaddestino": "|",
+            "formapago": "8",
+            "llevabodega": "false",
+            "recogebodega": "false",
+            "centrocostos": "",
+            "tiposervicio": "TISE_NORMAL_PAQ",
+            "observaciones": "2000012184454651 RUTA:36077",
+            "recaudoproducto": "0",
+            "unidades": [
+                {
+                    "tipounidad": "TIPO_UND_PAQ",
+                    "tipoempaque": "",
+                    "claseempaque": "CLEM_GRANDE",
+                    "dicecontener": "G24105EM7K.1",
+                    "kilosreales": "25",
+                    "largo": "138",
+                    "alto": "10",
+                    "ancho": "45",
+                    "pesovolumen": "",
+                    "valormercancia": "99486",
+                    "codigobarras": "",
+                    "numerobolsa": "",
+                    "referencias": "",
+                    "unidadesinternas": "1"
+                }
+            ],
+            "documentosreferencia": [
+                {
+                    "tipodocumento": null,
+                    "numerodocumento": null,
+                    "fechadocumento": null
+                }
+            ]
+        }
+    ]
+}

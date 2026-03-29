@@ -1,0 +1,17 @@
+{
+    "numerodespacho": null,
+    "remesas": [
+        {
+            "numerocontrol": "1",
+            "numeroremesa": "",
+            "numerosolicitud": "",
+            "documentosreferencia": "",
+            "codigoresultado": "-1",
+            "mensajeresultado": "Número de Remesa:  - Error: No se encontro la ciudad y centro de operacion para la ciudad DANE 13620000 "
+        }
+    ],
+    "urlrelacionenvio": "https://testsomos.tcc.com.co/Informesdsp.aspx?opc=6&formato=C&despacho=null&fuente=CLITCC20240OLPBZGKAK&TipoNaturaleza=&PrimerNombre=ABC CARGO EXPRESS SAS&SegundoNombre=null&PrimerApellido=null&SegundoApellido=null&NumeroIdentificacion=900174994-7&idRemesas=0-PQ,",
+    "urlrotulos": "https://testsomos.tcc.com.co/Informesdsp.aspx?opc=1&tipo=REMESAS&modelos=&naturaleza=&tipoIdentificacion=&numeroIdentificacion=&ids=0-TEMPORAL,",
+    "codigoresultado": "0",
+    "mensajeresultado": "Se han procesado (0) registros de un total de (1) despachos enviados."
+}

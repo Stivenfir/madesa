@@ -1,0 +1,76 @@
+{
+    "numerodespacho": "3229169371",
+    "fechadespacho": "2026-03-24",
+    "solicitudrecogida": {
+        "numero": null,
+        "fecha": "2026-03-24",
+        "ventanainicio": "2026-03-24T14:00:00",
+        "ventanafin": "2026-03-24T16:00:00"
+    },
+    "unidadnegocio": "1",
+    "cuentaremitente": "1485100",
+    "sederemitente": null,
+    "primernombreremitente": "",
+    "segundonombreremitente": "",
+    "primerapellidoremitente": "",
+    "segundoapellidoremitente": "",
+    "razonsocialremitente": "ABC CARGO EXPRESS SAS",
+    "contactoremitente": "",
+    "tipoidentificacionremitente": "NIT",
+    "identificacionremitente": "900174994-7",
+    "direccionremitente": "AVENIDA CALLE 24 # 95-12  BODEGA 45 PARQUE INDUSTRIAL PORTOS",
+    "ciudadorigen": "11001000",
+    "telefonoremitente": "3223817102",
+    "emailremitente": "EBLANCO@ABCCARGOEXPRESS.COM",
+    "destinatarios": [
+        {
+            "numerocontrol": "1",
+            "numeroremesa": null,
+            "numeroreferenciacliente": "",
+            "tipoidentificaciondestinatario": "CC",
+            "identificaciondestinatario": "123456789",
+            "sededestinatario": "",
+            "primernombredestinatario": "JOHN",
+            "segundonombredestinatario": "LEXANDER",
+            "primerapellidodestinatario": "TORRES",
+            "segundoapellidodestinatario": "PRADA",
+            "razonsocialdestinatario": "JOHN LEXANDER TORRES PRADA",
+            "contactodestinatario": "",
+            "direcciondestinatario": "CALLE 49 A SUR  # 11B - 58 ESTE. CASA. PISO 2. BOGOTA D.C.. SAN CRISTOBAL. BOGOTA D.C.. BOGOTA D.C.",
+            "telefonodestinatario": "573106220149",
+            "ciudaddestino": "SAN CRISTOBAL|BOLIVAR",
+            "formapago": "8",
+            "llevabodega": "false",
+            "recogebodega": "false",
+            "centrocostos": "",
+            "tiposervicio": "TISE_NORMAL_PAQ",
+            "observaciones": "3229169371 RUTA:36073",
+            "recaudoproducto": "0",
+            "unidades": [
+                {
+                    "tipounidad": "TIPO_UND_PAQ",
+                    "tipoempaque": "",
+                    "claseempaque": "CLEM_GRANDE",
+                    "dicecontener": "6917D81A",
+                    "kilosreales": "32",
+                    "largo": "185",
+                    "alto": "9",
+                    "ancho": "41",
+                    "pesovolumen": "",
+                    "valormercancia": "131549",
+                    "codigobarras": "",
+                    "numerobolsa": "",
+                    "referencias": "",
+                    "unidadesinternas": "1"
+                }
+            ],
+            "documentosreferencia": [
+                {
+                    "tipodocumento": null,
+                    "numerodocumento": null,
+                    "fechadocumento": null
+                }
+            ]
+        }
+    ]
+}

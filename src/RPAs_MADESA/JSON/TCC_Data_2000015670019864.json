@@ -1,0 +1,76 @@
+{
+    "numerodespacho": "2000015670019864",
+    "fechadespacho": "2026-03-24",
+    "solicitudrecogida": {
+        "numero": null,
+        "fecha": "2026-03-24",
+        "ventanainicio": "2026-03-24T14:00:00",
+        "ventanafin": "2026-03-24T16:00:00"
+    },
+    "unidadnegocio": "1",
+    "cuentaremitente": "1485100",
+    "sederemitente": null,
+    "primernombreremitente": "",
+    "segundonombreremitente": "",
+    "primerapellidoremitente": "",
+    "segundoapellidoremitente": "",
+    "razonsocialremitente": "ABC CARGO EXPRESS SAS",
+    "contactoremitente": "",
+    "tipoidentificacionremitente": "NIT",
+    "identificacionremitente": "900174994-7",
+    "direccionremitente": "AVENIDA CALLE 24 # 95-12  BODEGA 45 PARQUE INDUSTRIAL PORTOS",
+    "ciudadorigen": "11001000",
+    "telefonoremitente": "3223817102",
+    "emailremitente": "EBLANCO@ABCCARGOEXPRESS.COM",
+    "destinatarios": [
+        {
+            "numerocontrol": "1",
+            "numeroremesa": null,
+            "numeroreferenciacliente": "",
+            "tipoidentificaciondestinatario": "CC",
+            "identificaciondestinatario": "123456789",
+            "sededestinatario": "",
+            "primernombredestinatario": "VALENCIA",
+            "segundonombredestinatario": "VILLATE",
+            "primerapellidodestinatario": "FREDY",
+            "segundoapellidodestinatario": "ANDRES",
+            "razonsocialdestinatario": "VALENCIA VILLATE FREDY ANDRES",
+            "contactodestinatario": "",
+            "direcciondestinatario": "CARRERA 15A #30C-08 / FLOR DE MAYO. PAIPA (150447). BOYACA. PAIPA. PAIPA",
+            "telefonodestinatario": "3105876245",
+            "ciudaddestino": "BOYACA|BOYACA",
+            "formapago": "8",
+            "llevabodega": "false",
+            "recogebodega": "false",
+            "centrocostos": "",
+            "tiposervicio": "TISE_NORMAL_PAQ",
+            "observaciones": "2000015670019864 RUTA:36084",
+            "recaudoproducto": "0",
+            "unidades": [
+                {
+                    "tipounidad": "TIPO_UND_PAQ",
+                    "tipoempaque": "",
+                    "claseempaque": "CLEM_GRANDE",
+                    "dicecontener": "50085Z6TBE",
+                    "kilosreales": "49",
+                    "largo": "141",
+                    "alto": "11",
+                    "ancho": "75",
+                    "pesovolumen": "",
+                    "valormercancia": "204806",
+                    "codigobarras": "",
+                    "numerobolsa": "",
+                    "referencias": "",
+                    "unidadesinternas": "1"
+                }
+            ],
+            "documentosreferencia": [
+                {
+                    "tipodocumento": null,
+                    "numerodocumento": null,
+                    "fechadocumento": null
+                }
+            ]
+        }
+    ]
+}
